@@ -51,20 +51,18 @@ function undoHash(hash) {
 	var newString = "";
 	hash = parseInt(hash);
 	for (var idx in lSubValue) {
-		if (hash !== 0) {
-			do {
-				// idx is key
-				// lSubValue[idx] is value
-				for (var idxx in lSubValue) {
-					var holder = (hash - parseInt(lSubValue[idxx])) / 37;
-					if (Number.isInteger(holder) && holder > 0) {
-						hash = parseInt(holder);
-						newString += idxx;
-					}
+		do {
+			// idx is key
+			// lSubValue[idx] is value
+			for (var idxx in lSubValue) {
+				var holder = (hash - parseInt(lSubValue[idxx])) / 37;
+				if (Number.isInteger(holder) && holder > 0) {
+					hash = parseInt(holder);
+					newString += idxx;
 				}
-			} 
-			while (!Number.isInteger(hash))
-		}
+			}
+		} 
+		while (!Number.isInteger(hash))
 
 		idx++;
 	}
