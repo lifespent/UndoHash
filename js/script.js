@@ -41,7 +41,7 @@ function hash(string) {
     var idx = 0;
     var hash = 7;
     while (idx < string.length) {
-    	hash = (hash * 37 + letters.indexOf(string[idx]))
+    	hash = (hash * 37 + letters.indexOf(string[idx]));
     	idx++;
     }
     return hash;
@@ -56,7 +56,7 @@ function undoHash(hash) {
 				// idx is key
 				// lSubValue[idx] is value
 				for (var idxx in lSubValue) {
-					var holder = (hash - parseInt(lSubValue[idxx])) / 37
+					var holder = (hash - parseInt(lSubValue[idxx])) / 37;
 					if (Number.isInteger(holder) && holder > 0) {
 						hash = parseInt(holder);
 						newString += idxx;
