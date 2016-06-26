@@ -48,7 +48,6 @@ function hash(string) {
 }
 
 function undoHash(hash) {
-	var firstRun = true;
 	var newString = "";
 	hash = parseInt(hash);
 	for (var idx in lSubValue) {
